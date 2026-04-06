@@ -18,7 +18,7 @@ describe 'Card' do
   end
 end
 # OUTPUT (without Card class defined):
-#   .F
+#   F
 #
 #   Failures:
 #
@@ -30,7 +30,7 @@ end
 #       # ./spec/02__basics/03__expect_and_eq_spec.rb:3:in 'block (2 levels) in <top (required)>'
 #
 #   Finished in 0.00223 seconds (files took 0.04734 seconds to load)
-#   2 examples, 1 failure
+#   1 example, 1 failure
 #
 #   Failed examples:
 #
