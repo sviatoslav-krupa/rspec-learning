@@ -1,9 +1,9 @@
 # Notes:
 #   * The `let` method is a way to define a memoized helper method in RSpec
-#   * It memoize the value in scope of the example!!!
+#   * It memoizes the value in scope of the example, not in the example group!!!
 #   * Memoization means that the value is cached after the first call
 #   * The `let` method is lazy-loaded, meaning it won't be executed until it's called
-#   * The `let!` (with bang `!`) method is similar to `let`, but it is executed immediately; it's an alternative for `before`
+#   * The `let!` (with bang `!`) method is similar to `let`, but it is executed immediately even if it's not called; it's an alternative for `before`
 #   * We can use `let` inside other `let` methods
 
 class Card
