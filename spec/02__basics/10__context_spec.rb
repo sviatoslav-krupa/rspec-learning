@@ -26,3 +26,17 @@ end
 #
 #   Finished in 0.00068 seconds (files took 0.03311 seconds to load)
 #   2 examples, 0 failures
+
+# Edge cases:
+context 'context as a root example group' do
+  it 'should work' do
+    expect("It's working").to eq("It's working")
+  end
+end
+# OUTPUT:
+#
+#   context as a root example group
+#     should work
+#
+#   Finished in 0.00068 seconds (files took 0.03311 seconds to load)
+#   1 example, 0 failures
