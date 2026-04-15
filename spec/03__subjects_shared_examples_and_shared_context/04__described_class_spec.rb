@@ -25,3 +25,17 @@ end
 #
 #   Finished in 0.00055 seconds (files took 0.03302 seconds to load)
 #   1 example, 0 failures
+
+# Edge cases:
+describe 'described_class' do
+  it 'returns the class being described' do
+    p described_class #=> nil
+  end
+end
+# OUTPUT:
+#
+#   described_class
+#     returns the class being described
+# 
+#   Finished in 0.0018 seconds (files took 0.03892 seconds to load)
+#   1 example, 0 failures
