@@ -49,3 +49,38 @@ end
 #
 #   Finished in 0.00038 seconds (files took 0.03173 seconds to load)
 #   1 example, 0 failures
+
+class ClassWithCustomInitializer
+  def initialize(name)
+    @name = name
+  end
+end
+
+describe ClassWithCustomInitializer do
+  it 'creates an implicit subject' do
+    subject
+  end
+end
+# OUTPUT:
+#
+#   F
+# 
+#   Failures:
+# 
+#   1) ClassWithCustomInitializer creates an implicit subject
+#     Failure/Error:
+#       def initialize(name)
+#         @name = name
+#       end
+#  
+#     ArgumentError:
+#      wrong number of arguments (given 0, expected 1)
+#      # ./spec/03__subjects_shared_examples_and_shared_context/01__implicit_subject_spec.rb:54:in 'ClassWithCustomInitializer#initialize'
+#      # ./spec/03__subjects_shared_examples_and_shared_context/01__implicit_subject_spec.rb:61:in 'block (2 levels) in <top (required)>'
+# 
+#   Finished in 0.00242 seconds (files took 0.03906 seconds to load)
+#   1 example, 1 failure
+# 
+#   Failed examples:
+# 
+#   rspec ./spec/03__subjects_shared_examples_and_shared_context/01__implicit_subject_spec.rb:60 # ClassWithCustomInitializer creates an implicit subject
