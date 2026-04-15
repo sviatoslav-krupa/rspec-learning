@@ -13,6 +13,16 @@ describe 'shorthand syntax' do
   context 'with one-liner syntax' do
     it { is_expected.to eq(5) }
   end
+
+  context 'with mixed syntax' do
+    it 'should equal 5' do
+      is_expected.to eq(5)
+    end
+
+    it do
+      expect(subject).to eq(5)
+    end
+  end
 end
 # OUTPUT:
 #
@@ -21,6 +31,9 @@ end
 #       should equal 5
 #     with one-liner syntax
 #       is expected to eq 5
-#
-#   Finished in 0.00065 seconds (files took 0.0328 seconds to load)
-#   2 examples, 0 failures
+#     with mixed syntax
+#       should equal 5
+#       is expected to eq 5
+# 
+#   Finished in 0.00088 seconds (files took 0.03991 seconds to load)
+#   4 examples, 0 failures
