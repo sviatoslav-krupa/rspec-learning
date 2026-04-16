@@ -1,7 +1,7 @@
 # Notes:
 #   * `a.equal?(b)` (object identity: a and b refer to the same object)
 #   * `a.eql?(b)`   (object equivalence: a and b have the same value AND type)
-#   * `a == b`      (object equivalence: a and b have the same)
+#   * `a == b`      (object equivalence: a and b have the same value; less strict than `eql?`)
 #
 #   * `expect(a).to equal(b)` or `expect(a).to be(b)` (passes if `a.equal?(b)`)
 #   * `expect(a).to eql(b)`                           (passes if `a.eql?(b)`)
