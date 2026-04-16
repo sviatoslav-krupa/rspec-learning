@@ -16,10 +16,10 @@ end
 
 describe 'caterpillar' do
   it 'supports multiple matchers' do
-    expect(subject).to start_with('cat').and end_with('pillar')
+    expect(subject).to start_with('cat') and end_with('pillar')
   end
 
-  it { is_expected.to start_with('cat').and end_with('pillar') }
+  it { is_expected.to start_with('cat') and end_with('pillar') }
 end
 
 describe [:usa, :canada, :mexico] do
