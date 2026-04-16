@@ -1,6 +1,5 @@
 # Notes:
-#   * `not_to` checks that two values do not match
-#   * `not_to` checks for the inverse of a matcher
+#   * `not_to` checks that two values do not match; checks for the inverse of a matcher
 
 # Docs:
 #  * https://www.rubydoc.info/gems/rspec-expectations/2.14.4/RSpec%2FExpectations%2FExpectationTarget:not_to
