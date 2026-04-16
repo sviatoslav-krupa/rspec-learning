@@ -20,11 +20,15 @@ describe 'start_with and end_with matchers' do
       expect(subject).to start_with(:a)
       expect(subject).to start_with(:a, :b)
       expect(subject).to start_with(:a, :b, :c)
+      expect(subject).to start_with(:a, :b, :c, :d)
       expect(subject).to end_with(:d)
       expect(subject).to end_with(:c, :d)
+      expect(subject).to end_with(:b, :c, :d)
+      expect(subject).to end_with(:a, :b, :c, :d)
     end
 
     it { is_expected.to start_with(:a, :b) }
+    it { is_expected.to end_with(:c, :d) }
   end
 
 end
