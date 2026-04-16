@@ -39,3 +39,26 @@ end
 #
 #   Finished in 0.00196 seconds (files took 0.03167 seconds to load)
 #   4 examples, 0 failures
+
+# Edge cases:
+describe [1, 2, 3] do
+  it { is_expected.to contain_exactly(1, 2, 3, 3) }
+end
+# OUTPUT:
+#
+#   [1, 2, 3]
+#     is expected to contain exactly 1, 2, 3, and 3 (FAILED - 1)
+#
+#   Failures:
+#
+#     1) [1, 2, 3] is expected to contain exactly 1, 2, 3, and 3
+#        Failure/Error: it { is_expected.to contain_exactly(1, 2, 3, 3) }
+#
+#          expected collection contained:  [1, 2, 3, 3]
+#          actual collection contained:    [1, 2, 3]
+# 
+#   Finished in 0.00824 seconds (files took 0.06809 seconds to load)
+#   1 example, 1 failure
+#
+#   Failed examples:
+#   rspec ./spec/04__built-in-matchers/08__contain_exactly_matcher_spec.rb:45 # [1, 2, 3] is expected to contain exactly 1, 2, 3, and 3
