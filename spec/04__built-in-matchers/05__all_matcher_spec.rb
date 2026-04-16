@@ -33,3 +33,29 @@ end
 #
 #   Finished in 0.00205 seconds (files took 0.04935 seconds to load)
 #   3 examples, 0 failures
+
+# Edge cases:
+describe [5, 7, 9, 10] do
+  it { is_expected.to all(be_odd) }
+end
+# OUTPUT:
+#
+#   [5, 7, 9, 10]
+#     is expected to all be odd (FAILED - 1)
+# 
+#   Failures:
+#
+#     1) [5, 7, 9, 10] is expected to all be odd
+#        Failure/Error: it { is_expected.to all(be_odd) }
+#
+#          expected [5, 7, 9, 10] to all be odd
+#
+#             object at index 3 failed to match:
+#                expected `10.odd?` to be truthy, got false
+#        # ./spec/04__built-in-matchers/05__all_matcher_spec.rb:39:in 'block (2 levels) in <top (required)>'
+#
+#   Finished in 0.0035 seconds (files took 0.03918 seconds to load)
+#   1 example, 1 failure
+#
+#   Failed examples:
+#   rspec ./spec/04__built-in-matchers/05__all_matcher_spec.rb:39 # [5, 7, 9, 10] is expected to all be odd
