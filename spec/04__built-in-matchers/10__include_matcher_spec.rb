@@ -7,6 +7,7 @@ describe 'include matcher' do
       expect(subject).to include('hot')
       expect(subject).to include('choc')
       expect(subject).to include('late')
+      expect(subject).to include('hot', 'choc', 'late')
     end
 
     it { is_expected.to include('choc') }
@@ -17,9 +18,11 @@ describe 'include matcher' do
       expect(subject).to include(10)
       expect(subject).to include(10, 20)
       expect(subject).to include(30, 20)
+      expect(subject).to include(30, 20, 20, 10, 10)
     end
 
     it { is_expected.to include(20, 30, 10) }
+    it { is_expected.not_to include([10, 20, 30]) }
   end
 
   describe({ a: 2, b: 4 }) do
@@ -27,6 +30,7 @@ describe 'include matcher' do
       expect(subject).to include(:a)
       expect(subject).to include(:a, :b)
       expect(subject).to include(:b, :a)
+      expect(subject).to include(:a, :a, :b, :b)
     end
 
     it 'can check for key-value pair' do
@@ -35,6 +39,7 @@ describe 'include matcher' do
 
     it { is_expected.to include(:b) }
     it { is_expected.to include(b: 4) }
+    it { is_expected.to include(a: 2, b: 4, b: 4) }
   end
 end
 # OUTPUT:
