@@ -27,10 +27,14 @@ end
 
 describe CardGame do
   it 'can only implement class methods that are defined on a class' do
-    # Without `as_stubbed_const` it will raise an error: `Failure/Error: expect(subject.cards).to eq(['Ace', 'Queen']): expected: ["Ace", "Queen"], got: nil`
     deck_klass = class_double(Deck, build: ['Ace', 'Queen']).as_stubbed_const
+
     expect(deck_klass).to receive(:build)
+
     subject.start
+
+    # Without `as_stubbed_const` it will raise an error: `Failure/Error: expect(subject.cards).to eq(['Ace', 'Queen']): expected: ["Ace", "Queen"], got: nil`
+    # because `Deck` is not a class double, it's a regular class
     expect(subject.cards).to eq(['Ace', 'Queen'])
   end
 end
