@@ -63,6 +63,8 @@ describe Garage do
   let(:car) { instance_double(Car) }
 
   before do
+    # Stubbing `Car.new` with `allow(...).to receive(...)` also tracks calls,
+    # so `Car` can be verified with `have_received` without an explicit `spy`.
     allow(Car).to receive(:new).and_return(car)
   end
 
