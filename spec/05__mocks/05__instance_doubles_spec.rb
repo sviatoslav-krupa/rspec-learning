@@ -5,7 +5,7 @@
 #     the instance double only allows methods that are defined on the class to be called
 #   * Instance doubles can be used to stub or mock INSTANCE methods
 #   * We can't stub non-existing methods
-#   * Instance double also keep tracking the number of arguments passed to the stubbed method
+#   * Instance double also keeps tracking the number of arguments passed to the stubbed method
 
 # Docs:
 #   * https://rspec.info/features/3-12/rspec-mocks/verifying-doubles/instance-doubles/
