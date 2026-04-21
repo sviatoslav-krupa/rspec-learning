@@ -1,7 +1,7 @@
 # Notes:
 #   * Mock is a replacement for a real object that allows you to set expectations on how it is used
 #   * A double can be used to replace a real object in your tests
-#   * A double is strict by default - it only allows methods that are explicitly defined to be called
+#   * A double is strict by default - messages that have not been specifically allowed or expected will trigger an error
 #   * The first argument for `double` is a name or identifier for the double, used for reporting in failure messages
 
 # Docs:
