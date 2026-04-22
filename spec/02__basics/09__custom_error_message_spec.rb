@@ -14,7 +14,8 @@ describe Card do
     card.suit = 'Nonsense'
     comparison = 'Spades'
 
-    # Here, we added a custom message in case of an error
+    # Here, we added a custom message in case of a failure
+    # expect(card.suit).to(eq(comparison), "Hey, I expected #{comparison} but I got #{card.suit} instead!")
     expect(card.suit).to eq(comparison), "Hey, I expected #{comparison} but I got #{card.suit} instead!"
   end
 end
