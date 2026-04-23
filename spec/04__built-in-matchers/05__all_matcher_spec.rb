@@ -59,3 +59,30 @@ end
 #
 #   Failed examples:
 #   rspec ./spec/04__built-in-matchers/05__all_matcher_spec.rb:39 # [5, 7, 9, 10] is expected to all be odd
+
+describe 'error message with simpler syntax' do
+  it 'checks for all elements to be odd' do
+    [5, 7, 9, 10].each do |val|
+      expect(val).to be_odd
+    end
+  end
+end
+# OUTPUT:
+#
+#   F
+# 
+#   Failures:
+# 
+#   1) [5, 7, 9, 10] checks for all elements to be odd
+#      Failure/Error: expect(val).to be_odd
+#        expected `10.odd?` to be truthy, got false
+#      # ./spec/04__built-in-matchers/05__all_matcher_spec.rb:66:in 'block (3 levels) in <top (required)>'
+#      # ./spec/04__built-in-matchers/05__all_matcher_spec.rb:65:in 'Array#each'
+#      # ./spec/04__built-in-matchers/05__all_matcher_spec.rb:65:in 'block (2 levels) in <top (required)>'
+# 
+#   Finished in 0.00662 seconds (files took 0.03852 seconds to load)
+#   1 example, 1 failure
+# 
+#   Failed examples:
+# 
+#   rspec ./spec/04__built-in-matchers/05__all_matcher_spec.rb:64 # [5, 7, 9, 10] checks for all elements to be odd
