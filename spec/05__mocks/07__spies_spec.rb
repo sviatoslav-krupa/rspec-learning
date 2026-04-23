@@ -5,13 +5,13 @@
 
 # Docs:
 #   * https://martinfowler.com/articles/mocksArentStubs.html
-#   * https://revs.runtime-revolution.com/are-you-spying-on-me-a-quick-overview-of-spies-in-rspec-c5bc7669b897
 #   * https://thoughtbot.com/blog/a-closer-look-at-test-spies#what39s-next
 
 describe 'spies' do
   let(:animal) { spy('animal') }
 
   it 'confirms that a message has been received' do
+    # `spy` is a null-object double: it accepts unknown methods and records calls
     animal.eat_food
     expect(animal).to     have_received(:eat_food)
     expect(animal).not_to have_received(:eat_human)
@@ -25,6 +25,8 @@ describe 'spies' do
     animal.eat_food
     animal.eat_food
     animal.eat_food('Sushi')
+
+    # Each `have_received` expectation checks the same recorded call history independently
     expect(animal).to have_received(:eat_food).exactly(3).times
     expect(animal).to have_received(:eat_food).at_least(2).times
     expect(animal).to have_received(:eat_food).with('Sushi')
