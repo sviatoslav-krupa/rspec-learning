@@ -12,6 +12,7 @@ describe 'spies' do
 
   it 'confirms that a message has been received' do
     # `spy` is a null-object double: it accepts unknown methods and records calls
+    # spy('animal') == double('animal').as_null_object
     animal.eat_food
     expect(animal).to     have_received(:eat_food)
     expect(animal).not_to have_received(:eat_human)
