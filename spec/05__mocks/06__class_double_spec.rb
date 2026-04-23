@@ -29,6 +29,9 @@ describe CardGame do
   it 'can only implement class methods that are defined on a class' do
     deck_klass = class_double(Deck, build: ['Ace', 'Queen']).as_stubbed_const
 
+    # `class_double` alone does not affect `Deck` constant usage in `CardGame#start`.
+    # `as_stubbed_const` replaces `Deck` with the double, so `Deck.build` calls are intercepted.
+    # Without it, `subject.start` calls the real `Deck.build`, so this expectation would fail.
     expect(deck_klass).to receive(:build)
 
     subject.start
